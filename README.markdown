@@ -48,7 +48,7 @@ connection.
 ## Author ##
 [Joachim Staeck](mailto:js@iquer.net)
 
-## Derived form Predis v0.5.1 for PHP 5.2 by ## 
+## Derived form Predis v0.5.1 for PHP 5.2 by ##
 [Daniele Alessandri](mailto:suppakilla@gmail.com)
 
 ## License ##

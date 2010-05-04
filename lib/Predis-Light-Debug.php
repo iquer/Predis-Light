@@ -1,6 +1,6 @@
 <?php
 /*********************************************************************************************************************/
-/* Subset of Predis_Client API, derived from Predis-591c2b3 by Joachim Stack (js@iquer.net) */
+/* Subset of Predis_Client API, derived from Predis-591c2b3 by Joachim Staeck (js@iquer.net) */
 
 class Predis_ClientException extends Exception { }
 

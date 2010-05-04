@@ -12,7 +12,7 @@ most of the Predis and Redis features are not needed.
 
 ## Quick examples ##
 
-Basically it is used like Predis for PHP 5.2, but limited to 
+Predis Light is used like Predis for PHP 5.2, but limited to 
 
     AUTH,SELECT,SET,GET,INCR,DECR,DEL,EXISTS,EXPIRE,TTL
 
@@ -30,13 +30,14 @@ connection.
 
     $redis = new Predis\Client(
 		array('host' => 'localhost', 'port' => '6379'));
+    $redis->auth('foobared');
+    $redis->select(1);
     $redis->set('library', 'predis');
     $value = $redis->get('library');
 
 ## Dependencies ##
 
 - PHP >= 5.2.6 (for the Light client library)
-
 
 ## Related ##
 - [Redis](http://code.google.com/p/redis/)

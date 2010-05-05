@@ -40,9 +40,9 @@ throw new Predis_ClientException('An error has occurred while reading from the n
 $prefix = $header[0];
 $payload = substr($header, 1, -2);
 switch($prefix) {
-return ($payload == self::OK ? true : $payload);
+case '+':  return ($payload == self::OK ? true : $payload);
 break;
-if (!is_numeric($payload)) {
+case '$':  if (!is_numeric($payload)) {
 throw new Predis_ClientException("Cannot parse '$dataLength' as data length");
 }
 if ($payload > 0) {
@@ -59,7 +59,7 @@ return '';
 }
 return null;
 break;
-if (is_numeric($payload)) {
+case ':':  if (is_numeric($payload)) {
 return (int) $payload;
 }
 else {
@@ -69,7 +69,7 @@ throw new Predis_ClientException("Cannot parse '$number' as numeric response");
 return null;
 }
 break;
-throw new Predis_ClientException(substr($payload, 4));
+case '-':  throw new Predis_ClientException(substr($payload, 4));
 break;
 default:
 if (!isset($this->$_prefixHandlers[$prefix]))
